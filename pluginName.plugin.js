@@ -17,15 +17,44 @@ function Plugin($element, pluginOptions) {
 
   init();
 
+  addEvents();
+
   // Plugin code here
 
   function init() {
     // Plugin init code here
   }
 
+  function onClickEvent(event) {
+    let $target = event.target;
+
+    // The element we click on must have a data attribute
+    let elementType = $target.getAttribute('data-type');
+
+    switch (elementType) {
+      case 'button':
+        event.preventDefault() && event.stopPropagation();
+        console.log('Event button press', event);
+        break;
+      default:
+        console.log('Unprocessed mouse click event', event);
+        break;
+    }
+  }
+
+  function addEvents() {
+    $root.addEventListener('click', onClickEvent);
+  }
+
+  function removeEvents() {
+    $root.removeEventListener('click', onClickEvent);
+  }
+
   // Public method for destroying a plugin
   function destroy() {
     // Remove events
+    removeEvents();
+
     // Remove created tags
     return true;
   }
