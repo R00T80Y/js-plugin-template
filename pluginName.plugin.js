@@ -1,29 +1,31 @@
 /**
  * @author r00t80y<https://github.com/R00T80Y>
- * @file
+ * @file JavaScript Plugin Template
  * @since 04-02-2022
- * @updated 04-02-2022
- * @version 0.0.1
+ * @updated 09-02-2022
+ * @version 0.1.0
  */
 
+import './utils.js';
+
 const defaultOptions = {
-  // Plugin options here
+  // Plugin options here...
+
+  // Plugin Hooks
+  init: false,
+  destroy: false,
 };
 
-function Plugin($element, pluginOptions) {
+function Plugin($rootElement, pluginOptions) {
 
   // Private variables
-  let $root = $element;
+  let $root = $rootElement;
 
-  init();
+  // Plugin code here...
+  addEvents()
 
-  addEvents();
-
-  // Plugin code here
-
-  function init() {
-    // Plugin init code here
-  }
+  // Hook init
+  Utils.type(pluginOptions.init) === 'function' && pluginOptions.init();
 
   function onClickEvent(event) {
     let $target = event.target;
@@ -56,6 +58,8 @@ function Plugin($element, pluginOptions) {
     removeEvents();
 
     // Remove created tags
+    // Hook destroy
+    Utils.type(pluginOptions.destroy) === 'function' && pluginOptions.destroy();
     return true;
   }
 
