@@ -2,8 +2,8 @@
  * @author r00t80y<https://github.com/R00T80Y>
  * @file JavaScript Plugin Template
  * @since 04-02-2022
- * @updated 09-02-2022
- * @version 0.1.0
+ * @updated 16-02-2022
+ * @version 0.2.0
  */
 
 import './utils.js';
@@ -24,20 +24,20 @@ function Plugin($rootElement, pluginOptions) {
   // Plugin code here...
 
   // Hook init
-  Utils.type(pluginOptions.init) === 'function' && pluginOptions.init();
+  Utils.isFunction(pluginOptions.init) && pluginOptions.init();
 
   // Public method for destroying a plugin
   function destroy() {
     // Remove events
     // Remove created tags
     // Hook destroy
-    Utils.type(pluginOptions.destroy) === 'function' && pluginOptions.destroy();
+    Utils.isFunction(pluginOptions.destroy) && pluginOptions.destroy();
     return true;
   }
 
   return {
     // Public methods
-    get pluginOptions() { return pluginOptions; },
+    get options() { return pluginOptions; },
     destroy,
   }
 }

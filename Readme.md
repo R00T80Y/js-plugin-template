@@ -17,4 +17,17 @@ PluginName(document.querySelectorAll('.selector'), {
 ```
 
 ## Examples
-- [Event: Mouse Click](https://github.com/R00T80Y/js-plugin-template/commit/e9af22a40324b95636b5986feb23e1dc926f5114)
+- [Event: Mouse Click](https://github.com/R00T80Y/js-plugin-template/blob/example-events/pluginName.plugin.js)
+
+## Version 0.2.0
+If only one element is found by the selector
+Renamed method to retrieve settings: pluginOptions -> options
+```
+const pluginItem = PluginName(document.getElementById('id'));
+// Old: pluginItem[0].pluginOptions
+console.log(pluginItem[0].options);
+```
+Example: Added method Utils.isFunction()
+```
+console.log(Utils.isFunction(Element.prototype.closest))
+```
