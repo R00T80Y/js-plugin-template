@@ -2,11 +2,11 @@
  * @author r00t80y<https://github.com/R00T80Y>
  * @file JavaScript Plugin Template
  * @since 04-02-2022
- * @updated 16-02-2022
+ * @updated 24-02-2022
  * @version 0.2.0
  */
 
-import './utils.js';
+import Utils from './utils.js';
 
 const defaultOptions = {
   // Plugin options here...
@@ -42,7 +42,7 @@ function Plugin($rootElement, pluginOptions) {
   }
 }
 
-export default function PluginName(element, customOptions) {
+function PluginName(element, customOptions) {
   const nodeList = [];
   const instances = [];
 
@@ -73,3 +73,5 @@ export default function PluginName(element, customOptions) {
     return instances;
   }());
 }
+
+export { PluginName };
