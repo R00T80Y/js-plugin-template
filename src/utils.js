@@ -3,7 +3,7 @@
  * @file Utils used in plugin
  * @since 09-02-2022
  * @updated 14-02-2022
- * @version 0.2.0
+ * @version 0.2.1
  */
 
 const Utils = {
@@ -14,7 +14,7 @@ const Utils = {
 
   isFunction(func) {
     return (Utils.type(func) === 'function');
-  },
-}
+  }
+};
 
 export default Utils;
