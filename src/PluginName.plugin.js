@@ -1,11 +1,10 @@
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable no-unused-expressions */
 /**
  * @author r00t80y<https://github.com/R00T80Y>
  * @file JavaScript Plugin Template
  * @since 04-02-2022
  * @updated 25-02-2022
- * @version 0.3.1
+ * @version 0.3.2
  */
 
 import Utils from './utils';
@@ -22,7 +21,9 @@ function Plugin($rootElement, pluginOptions) {
   // Plugin methods...
 
   // Plugin init...
-  Utils.isFunction(pluginOptions.init) && pluginOptions.init();
+  if (Utils.isFunction(pluginOptions.init)) {
+    pluginOptions.init();
+  }
 
   // Plugin code here...
 
@@ -35,8 +36,12 @@ function Plugin($rootElement, pluginOptions) {
 
     // Public method for destroying a plugin
     destroy() {
-      Utils.isFunction(pluginOptions.destroy) && pluginOptions.destroy();
+      if (Utils.isFunction(pluginOptions.destroy)) {
+        pluginOptions.destroy();
+      }
+
       // Delete created tags and events
+
       return true;
     }
   };
