@@ -4,8 +4,8 @@
  * @author r00t80y<https://github.com/R00T80Y>
  * @file JavaScript Plugin Template
  * @since 04-02-2022
- * @updated 24-02-2022
- * @version 0.3.0
+ * @updated 25-02-2022
+ * @version 0.3.1
  */
 
 import Utils from './utils';
@@ -19,15 +19,19 @@ const defaultOptions = {
 };
 
 function Plugin($rootElement, pluginOptions) {
-  // Private variables...
+  // Plugin methods...
 
-  // Plugin code here...
-  // Hook init
+  // Plugin init...
   Utils.isFunction(pluginOptions.init) && pluginOptions.init();
 
+  // Plugin code here...
+
+  // Plugin interface
   return {
-    // Public methods
-    get options() { return pluginOptions; },
+    // Public attributes
+    get options() {
+      return pluginOptions;
+    },
 
     // Public method for destroying a plugin
     destroy() {
