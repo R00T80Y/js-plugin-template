@@ -26,8 +26,8 @@ PluginName(document.querySelectorAll('.class'), {
 - [Event: Mouse Click](https://github.com/R00T80Y/js-plugin-template/blob/example-events/pluginName.plugin.js)
 
 ## Version 0.3.0
-Added [Rollup.js](https://rollupjs.org/guide/en/)
-Added [ESLint](https://eslint.org/)
+- Added [Rollup.js](https://rollupjs.org/guide/en/)
+- Added [ESLint](https://eslint.org/)
 
 ## Version 0.2.0
 If only one element is found by the selector
