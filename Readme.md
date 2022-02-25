@@ -31,7 +31,7 @@ function Plugin($rootElement, pluginOptions) {
   function onPluginClick(event) {
     const $target = event.target;
 
-    // The element we click on must have a data attribute
+    // Process an event for a specific tag
     const tagName = $target.tagName;
 
     switch (tagName) {
