@@ -23,7 +23,40 @@ PluginName(document.querySelectorAll('.class'), {
 ```
 
 ## Examples
-- [Event: Mouse Click](https://github.com/R00T80Y/js-plugin-template/blob/example-events/pluginName.plugin.js)
+### Example: adding a mouse click event
+```
+function Plugin($rootElement, pluginOptions) {
+  // ...
+  // Plugin code here...
+  function onPluginClick(event) {
+    const $target = event.target;
+
+    // The element we click on must have a data attribute
+    const tagName = $target.tagName;
+
+    switch (tagName) {
+      case 'button':
+        event.preventDefault() && event.stopPropagation();
+        console.log('Event button press', event);
+        break;
+      default:
+        console.log('Unprocessed mouse click event', event);
+        break;
+    }
+  }
+
+  $rootElement.addEventListener('click', onPluginClick);
+  // ...
+}
+```
+```
+destroy() {
+  // ...
+  // Delete created tags and events
+  $rootElement.removeEventListener('click', onPluginClick);
+  // ...
+}
+```
 
 ## Version 0.3.0
 - Added [Rollup.js](https://rollupjs.org/guide/en/)
