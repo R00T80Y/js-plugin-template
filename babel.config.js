@@ -4,7 +4,8 @@ module.exports = {
   presets: [
     [
       '@babel/preset-env', {
-        debug: PRODUCTION_MODE
+        debug: PRODUCTION_MODE,
+        modules: false
       }
     ]
   ]
