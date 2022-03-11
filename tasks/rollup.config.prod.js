@@ -14,7 +14,7 @@ export default {
       sourcemap: true
     },
     {
-      file: `${paths.build}/es/index.js`,
+      file: `${paths.build}/esm/index.js`,
       format: 'esm',
       sourcemap: true
     },
@@ -34,8 +34,8 @@ export default {
         if (output.file.includes(`${paths.build}/cjs/`)) {
           prefix = `${paths.build}/cjs/`;
           type = 'commonjs';
-        } else if (output.file.includes(`${paths.build}/es/`)) {
-          prefix = `${paths.build}/es/`;
+        } else if (output.file.includes(`${paths.build}/esm/`)) {
+          prefix = `${paths.build}/esm/`;
           type = 'module';
         } else if (output.file.includes(`${paths.build}/umd/`)) {
           prefix = `${paths.build}/umd/`;
