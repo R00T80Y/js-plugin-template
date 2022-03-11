@@ -2,6 +2,7 @@ import copy from 'rollup-plugin-copy';
 import resolve from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
 import html from '@rollup/plugin-html';
+import browsersync from 'rollup-plugin-browsersync';
 import paths from './paths';
 
 export default {
@@ -24,6 +25,10 @@ export default {
       targets: [
         { src: `${paths.public}/*`, dest: paths.build }
       ]
+    }),
+    browsersync({
+      server: 'build',
+      port: 9000
     })
   ]
 };
