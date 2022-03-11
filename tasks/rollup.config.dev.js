@@ -5,12 +5,30 @@ import browsersync from 'rollup-plugin-browsersync';
 import fg from 'fast-glob';
 import paths from './paths';
 
-export default {
+export default [{
+  input: `${paths.source}/PluginName.plugin.js`,
+  output: [
+    {
+      file: `${paths.build}/iife/index.js`,
+      format: 'iife',
+      sourcemap: true,
+      name: 'PluginName'
+    }
+  ],
+  plugins: [
+    resolve(),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**'
+    })
+  ]
+},
+{
   input: `${paths.source}/index.js`,
   output: [
     {
       file: `${paths.build}/index.js`,
-      format: 'es',
+      format: 'iife',
       sourcemap: true
     }
   ],
@@ -40,4 +58,4 @@ export default {
       port: 9000
     })
   ]
-};
+}];

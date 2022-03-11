@@ -1,12 +1,16 @@
+/* global PluginName */
+/* eslint no-undef: "error" */
 /* eslint-disable no-console */
-import PluginName from './PluginName.plugin';
+// import { PluginName } from './PluginName.plugin';
 
 // Create three headers
 for (let i = 0; i < 3; i += 1) {
   // Create header <h2>
   const $h2 = document.createElement('h2');
+
   // Add text for header
   $h2.innerText = `Tag <h2> ${i}`;
+
   // Add a heading to the document
   document.body.appendChild($h2);
 }
