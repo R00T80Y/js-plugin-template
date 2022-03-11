@@ -21,7 +21,7 @@
   "scripts": {
     "serve": "npm run clean && cross-env NODE_ENV=development rollup --config ./tasks/rollup.config.dev.js --watch",
     "build": "cross-env NODE_ENV=production rollup --config ./tasks/rollup.config.prod.js",
-    "clean": "rm -rf ./build"
+    "clean": "rm -rf ./build/*"
   },
   "repository": {
     "type": "git",
