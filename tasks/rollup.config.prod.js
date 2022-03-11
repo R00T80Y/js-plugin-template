@@ -9,17 +9,17 @@ export default {
   input: `${paths.source}/PluginName.plugin.js`,
   output: [
     {
-      file: `${paths.dist}/cjs/index.js`,
+      file: `${paths.build}/cjs/index.js`,
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: `${paths.dist}/es/index.js`,
+      file: `${paths.build}/es/index.js`,
       format: 'esm',
       sourcemap: true
     },
     {
-      file: `${paths.dist}/umd/index.js`,
+      file: `${paths.build}/umd/index.js`,
       format: 'umd',
       sourcemap: true,
       name: 'PluginName'
@@ -31,14 +31,14 @@ export default {
       async writeBundle(output) {
         let prefix;
         let type;
-        if (output.file.includes(`${paths.dist}/cjs/`)) {
-          prefix = `${paths.dist}/cjs/`;
+        if (output.file.includes(`${paths.build}/cjs/`)) {
+          prefix = `${paths.build}/cjs/`;
           type = 'commonjs';
-        } else if (output.file.includes(`${paths.dist}/es/`)) {
-          prefix = `${paths.dist}/es/`;
+        } else if (output.file.includes(`${paths.build}/es/`)) {
+          prefix = `${paths.build}/es/`;
           type = 'module';
-        } else if (output.file.includes(`${paths.dist}/umd/`)) {
-          prefix = `${paths.dist}/umd/`;
+        } else if (output.file.includes(`${paths.build}/umd/`)) {
+          prefix = `${paths.build}/umd/`;
           type = 'commonjs';
         }
         if (typeof prefix !== 'undefined') {

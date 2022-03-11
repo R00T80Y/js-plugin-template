@@ -4,24 +4,24 @@
   "description": "JavaScript Plugin Template",
   "exports": {
     ".": {
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./build/es/index.js",
+      "require": "./build/cjs/index.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "dist/cjs/index.js",
-  "jsdelivr": "dist/umd/index.js",
-  "unpkg": "dist/umd/index.js",
-  "module": "dist/es/index.js",
+  "main": "build/cjs/index.js",
+  "jsdelivr": "build/umd/index.js",
+  "unpkg": "build/umd/index.js",
+  "module": "build/es/index.js",
   "files": [
-    "dist/",
+    "build/",
     "src/",
     "LICENSE"
   ],
   "scripts": {
     "serve": "npm run clean && cross-env NODE_ENV=development rollup --config ./tasks/rollup.config.dev.js --watch",
     "build": "cross-env NODE_ENV=production rollup --config ./tasks/rollup.config.prod.js",
-    "clean": "rm -rf ./dist && rm -rf ./build"
+    "clean": "rm -rf ./build"
   },
   "repository": {
     "type": "git",
