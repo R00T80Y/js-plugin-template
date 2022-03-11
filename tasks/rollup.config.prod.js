@@ -11,7 +11,8 @@ export default {
     {
       file: `${paths.build}/cjs/index.js`,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
+      exports: 'default'
     },
     {
       file: `${paths.build}/esm/index.js`,

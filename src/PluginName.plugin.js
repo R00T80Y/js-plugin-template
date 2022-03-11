@@ -86,4 +86,4 @@ function PluginName(element, customOptions) {
   }());
 }
 
-export { PluginName };
+export default PluginName;

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { PluginName } from './PluginName.plugin';
+import PluginName from './PluginName.plugin';
 
 // Create three headers
 for (let i = 0; i < 3; i += 1) {

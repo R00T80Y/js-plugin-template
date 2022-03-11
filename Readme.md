@@ -1,6 +1,6 @@
 # How to use?
 ```
-import { PluginName } from './PluginName.plugin';
+import PluginName from './PluginName.plugin';
 ```
 
 ## Calling the plug-in
